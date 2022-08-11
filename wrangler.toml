@@ -1,2 +1,3 @@
 main = "./index.js"
 account_id = "${{ CLOUDFLARE_ACCOUNT_ID }}"
+compatibility_date = "2022-07-01"
