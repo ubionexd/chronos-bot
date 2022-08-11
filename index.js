@@ -20,4 +20,4 @@ client.on('guildMemberAdd', (member) => {
 	member.send({embeds: [message]});
 });
 
-client.login(process.env.TOKEN);
+client.login(${{secrets.TOKEN}});
