@@ -1,0 +1,2 @@
+main = "./index.js"
+account_id = "${{ CLOUDFLARE_ACCOUNT_ID }}"
