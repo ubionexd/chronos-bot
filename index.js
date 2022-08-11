@@ -2,7 +2,6 @@ const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 require('dotenv').config();
 
 const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers] });
-const token = process.env.TOKEN;
 
 client.once('ready', () => {
 	console.log('Startup succeeded!');
@@ -21,4 +20,4 @@ client.on('guildMemberAdd', (member) => {
 	member.send({embeds: [message]});
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
