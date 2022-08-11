@@ -1,7 +1,0 @@
-name = "chronos-bot"
-main = "./index.js"
-type = "javascript"
-
-account_id = "${{ CLOUDFLARE_ACCOUNT_ID }}"
-compatibility_date = "2022-07-01"
-workers_dev = true
