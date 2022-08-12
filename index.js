@@ -25,6 +25,7 @@ client.on('guildMemberAdd', (member) => {
         'https://cdn.modrinth.com/data/qBOrMQj2/2a2dd095e3d20fc0607f6d48939ae235ec450b0b.png',
       url: 'https://modrinth.com/modpack/chronos',
     })
+    .setColor(0xfa824c)
 
   member.send({ embeds: [message] })
 })
