@@ -29,5 +29,5 @@ client.on('guildMemberAdd', (member) => {
   member.send({ embeds: [message] })
 })
 */
-console.log('process.env.DEPLOY_TOKEN')
+console.log(process.env.DEPLOY_TOKEN)
 // client.login('process.env.DEPLOY_TOKEN')
