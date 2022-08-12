@@ -29,4 +29,4 @@ client.on("guildMemberAdd", (member) => {
   member.send({ embeds: [message] });
 });
 
-client.login('process.env.TOKEN');
+client.login('process.env.DEPLOY_TOKEN');
