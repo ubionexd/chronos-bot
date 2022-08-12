@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js')
+const moment = require('moment')
 require('dotenv').config()
 
 const client = new Client({
@@ -11,8 +12,9 @@ client.once('ready', () => {
 
 client.on('guildMemberAdd', (member) => {
   const name = member.user.username
-
-  console.log(`${name} joined, sending message`)
+  const id = member.user.id
+  let time = moment.utc().format('YYYY.MM.DD hh:mm')
+  console.log(`${name} (${id}) joined. Sending message...`)
 
   const message = new EmbedBuilder()
     .setTitle(`Welcome ${name} to`)
@@ -26,6 +28,7 @@ client.on('guildMemberAdd', (member) => {
       url: 'https://modrinth.com/modpack/chronos',
     })
     .setColor(0xfa824c)
+    .setFooter({ text: `Joined at ${time} UTC` })
 
   member.send({ embeds: [message] })
 })
