@@ -22,7 +22,7 @@ client.once("ready", () => {
     });
     
     console.log(`Update presence!\nTotal members: ${guildCount}\nReal members: ${members}`)
-  }, 5000);
+  }, 3600000);
 
   console.log("Startup succeeded!");
 });
