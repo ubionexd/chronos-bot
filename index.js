@@ -20,8 +20,10 @@ client.once("ready", () => {
     client.user.setActivity(`${members} members`, {
       type: ActivityType.Watching,
     });
-    
-    console.log(`Update presence!\nTotal members: ${guildCount}\nReal members: ${members}`)
+
+    console.log(
+      `Update presence!\nTotal members: ${guildCount}\nReal members: ${members}`
+    );
   }, 900000);
 
   console.log("Startup succeeded!");
