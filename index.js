@@ -12,20 +12,23 @@ const client = new Client({
 });
 
 client.once("ready", () => {
+  const guild = client.guilds.cache.get(process.env.GUILD_ID)
+  let members = guild.memberCount - 3
+  client.user.setActivity(`${members} members`, {
+    type: ActivityType.Watching,
+  });
+  
   setInterval(() => {
-    const guildCount = client.guilds.cache.map((g) => {
-      return g.memberCount;
-    });
-    const members = guildCount - 3;
+    members = guild.memberCount - 3
     client.user.setActivity(`${members} members`, {
       type: ActivityType.Watching,
     });
 
     console.log(
-      `Update presence!\nTotal members: ${guildCount}\nReal members: ${members}`
+      `Update presence! Members: ${members}`
     );
   }, 900000);
-
+ 
   console.log("Startup succeeded!");
 });
 
