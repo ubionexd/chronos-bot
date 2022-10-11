@@ -12,24 +12,22 @@ const client = new Client({
 });
 
 client.once("ready", () => {
-  const guild = client.guilds.cache.get(process.env.GUILD_ID)
-  let members = guild.memberCount - 3
+  const guild = client.guilds.cache.get(process.env.GUILD_ID);
+  let members = guild.memberCount - 3;
   client.user.setActivity(`${members} members`, {
     type: ActivityType.Watching,
   });
-  console.log(`Presence set! Members: ${members}`)
-  
+  console.log(`Presence set! Members: ${members}`);
+
   setInterval(() => {
-    members = guild.memberCount - 3
+    members = guild.memberCount - 3;
     client.user.setActivity(`${members} members`, {
       type: ActivityType.Watching,
     });
 
-    console.log(
-      `Update presence! Members: ${members}`
-    );
+    console.log(`Update presence! Members: ${members}`);
   }, 900000);
- 
+
   console.log("Startup succeeded!");
 });
 
