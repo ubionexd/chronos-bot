@@ -17,6 +17,7 @@ client.once("ready", () => {
   client.user.setActivity(`${members} members`, {
     type: ActivityType.Watching,
   });
+  console.log(`Presence set! Members: ${members}`)
   
   setInterval(() => {
     members = guild.memberCount - 3
